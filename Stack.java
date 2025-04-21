@@ -23,42 +23,43 @@
 package net.datastructures;
 
 /**
- * Interface for a queue: a collection of elements that are inserted
- * and removed according to the first-in first-out principle. Although
- * similar in purpose, this interface differs from java.util.Queue.
+ * A collection of objects that are inserted and removed according to the last-in
+ * first-out principle. Although similar in purpose, this interface differs from
+ * java.util.Stack.
  *
  * @author Michael T. Goodrich
  * @author Roberto Tamassia
  * @author Michael H. Goldwasser
  */
-public interface Queue<E> {
+public interface Stack<E> {
+
   /**
-   * Returns the number of elements in the queue.
-   * @return number of elements in the queue
+   * Returns the number of elements in the stack.
+   * @return number of elements in the stack
    */
   int size();
 
   /**
-   * Tests whether the queue is empty.
-   * @return true if the queue is empty, false otherwise
+   * Tests whether the stack is empty.
+   * @return true if the stack is empty, false otherwise
    */
   boolean isEmpty();
 
   /**
-   * Inserts an element at the rear of the queue.
-   * @param e  the element to be inserted
+   * Inserts an element at the top of the stack.
+   * @param e   the element to be inserted
    */
-  void enqueue(E e);
+  void push(E e);
 
   /**
-   * Returns, but does not remove, the first element of the queue.
-   * @return the first element of the queue (or null if empty)
+   * Returns, but does not remove, the element at the top of the stack.
+   * @return top element in the stack (or null if empty)
    */
-  E first();
+  E top();
 
   /**
-   * Removes and returns the first element of the queue.
+   * Removes and returns the top element from the stack.
    * @return element removed (or null if empty)
    */
-  E dequeue();
+  E pop();
 }
